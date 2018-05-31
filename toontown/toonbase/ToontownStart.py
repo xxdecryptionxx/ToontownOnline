@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 import __builtin__
 
 class game:
@@ -17,7 +15,7 @@ try:
     pass
 except:
     from toontown.launcher.ToontownDummyLauncher import ToontownDummyLauncher
-    launcher = ToontownDummyLauncher()
+    launcher = ToontownDummyLauncher() # Dummy launcher loaded as launcher
     __builtin__.launcher = launcher
 
 launcher.setRegistry('EXIT_PAGE', 'normal')
@@ -37,7 +35,7 @@ backgroundNode = tempLoader.loadSync(Filename('phase_3/models/gui/loading-backgr
 from direct.gui import DirectGuiGlobals
 print 'ToontownStart: setting default font'
 import ToontownGlobals
-DirectGuiGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont)
+DirectGuiGlobals.setDefaultFontFunc(ToontownGlobals.getInterfaceFont) # GUI font
 launcher.setPandaErrorCode(7)
 import ToonBase
 ToonBase.ToonBase()
@@ -63,15 +61,15 @@ import TTLocalizer
 from otp.otpbase import OTPGlobals
 OTPGlobals.setDefaultProductPrefix(TTLocalizer.ProductPrefix)
 if base.musicManagerIsValid:
-    music = base.musicManager.getSound('phase_3/audio/bgm/tt_theme.mid')
+    music = base.musicManager.getSound('phase_3/audio/bgm/tt_theme.mid') # Loads "The Toontown Theme" for the main theme
     if music:
         music.setLoop(1)
         music.setVolume(0.90000000000000002)
         music.play()
     
     print 'ToontownStart: Loading default gui sounds'
-    DirectGuiGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.mp3'))
-    DirectGuiGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.mp3'))
+    DirectGuiGlobals.setDefaultRolloverSound(base.loadSfx('phase_3/audio/sfx/GUI_rollover.mp3')) # SFX for rolling over a button
+    DirectGuiGlobals.setDefaultClickSound(base.loadSfx('phase_3/audio/sfx/GUI_create_toon_fwd.mp3')) # Same here but for clicking
 else:
     music = None
 import ToontownLoader
@@ -92,7 +90,7 @@ loader.endBulkLoad('init')
 from otp.friends import FriendManager
 from otp.distributed.OtpDoGlobals import *
 cr.generateGlobalObject(OTP_DO_ID_FRIEND_MANAGER, 'FriendManager')
-if not launcher.isDummy():
+if not launcher.isDummy(): # Is this the Dummy launcher?
     base.startShow(cr, launcher.getGameServer())
 else:
     base.startShow(cr)

@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 from direct.actor import Actor
 from direct.directnotify import DirectNotifyGlobal

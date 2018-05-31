@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from toontown.toonbase.TTLocalizerEnglishProperty import *
 from toontown.catalog import CatalogAccessoryItemGlobals
 from otp.otpbase import OTPLocalizer as OL
@@ -7,18 +5,18 @@ OL.SpeedChatStaticText = OL.SpeedChatStaticTextToontown.copy()
 for key in OL.SpeedChatStaticTextCommon.iterkeys():
     OL.SpeedChatStaticText[key] = OL.SpeedChatStaticTextCommon[key]
 
-commitmantst = 'kptmptest - removable'
-InterfaceFont = 'phase_3/models/fonts/ImpressBT.ttf'
-ToonFont = 'phase_3/models/fonts/ImpressBT.ttf'
-SuitFont = 'phase_3/models/fonts/vtRemingtonPortable.ttf'
-SignFont = 'phase_3/models/fonts/MickeyFont'
-MinnieFont = 'phase_3/models/fonts/MinnieFont'
+commitmantst = 'kptmptest - removable' # Unused, used for testing the SourceForge repository?
+InterfaceFont = 'phase_3/models/fonts/ImpressBT.ttf' # Impress BT for the UI
+ToonFont = 'phase_3/models/fonts/ImpressBT.ttf' # Impress BT for Toons speaking?
+SuitFont = 'phase_3/models/fonts/vtRemingtonPortable.ttf' # VT Portable Remington for Cogs
+SignFont = 'phase_3/models/fonts/MickeyFont' # Mickey for signs
+MinnieFont = 'phase_3/models/fonts/MinnieFont' # Minnie
 FancyFont = 'phase_3/models/fonts/Comedy'
 NametagFonts = ('phase_3/models/fonts/AnimGothic', 'phase_3/models/fonts/Aftershock', 'phase_3/models/fonts/JiggeryPokery', 'phase_3/models/fonts/Ironwork', 'phase_3/models/fonts/HastyPudding', 'phase_3/models/fonts/Comedy', 'phase_3/models/fonts/Humanist', 'phase_3/models/fonts/Portago', 'phase_3/models/fonts/Musicals', 'phase_3/models/fonts/Scurlock', 'phase_3/models/fonts/Danger', 'phase_3/models/fonts/Alie', 'phase_3/models/fonts/OysterBar', 'phase_3/models/fonts/RedDogSaloon')
 NametagFontNames = ('Member', 'Shivering', 'Wonky', 'Fancy', 'Silly', 'Zany', 'Practical', 'Nautical', 'Whimsical', 'Spooky', 'Action', 'Poetic', 'Boardwalk', 'Western')
 NametagLabel = ' Nametag'
 UnpaidNameTag = 'Basic'
-GM_NAMES = ('TOON COUNCIL', 'TOON TROOPER', 'RESISTANCE RANGER', 'GC')
+GM_NAMES = ('TOON COUNCIL', 'TOON TROOPER', 'RESISTANCE RANGER', 'GC') # Impossible to obtain
 BuildingNametagFont = 'phase_3/models/fonts/MickeyFont'
 BuildingNametagShadow = None
 ProductPrefix = 'TT'
@@ -53,33 +51,33 @@ lOutdoorZone = "Chip 'n Dale's Acorn Acres"
 lGolfZone = "Chip 'n Dale's MiniGolf"
 lPartyHood = 'Party Grounds'
 GlobalStreetNames = {
-    20000: ('to', 'on', 'Tutorial Terrace'),
-    1000: ('to the', 'in the', 'Playground'),
-    1100: ('to', 'on', 'Barnacle Boulevard'),
-    1200: ('to', 'on', 'Seaweed Street'),
-    1300: ('to', 'on', 'Lighthouse Lane'),
-    2000: ('to the', 'in the', 'Playground'),
-    2100: ('to', 'on', 'Silly Street'),
-    2200: ('to', 'on', 'Loopy Lane'),
-    2300: ('to', 'on', 'Punchline Place'),
-    3000: ('to the', 'in the', 'Playground'),
-    3100: ('to', 'on', 'Walrus Way'),
-    3200: ('to', 'on', 'Sleet Street'),
-    3300: ('to', 'on', 'Polar Place'),
-    4000: ('to the', 'in the', 'Playground'),
-    4100: ('to', 'on', 'Alto Avenue'),
-    4200: ('to', 'on', 'Baritone Boulevard'),
-    4300: ('to', 'on', 'Tenor Terrace'),
-    5000: ('to the', 'in the', 'Playground'),
-    5100: ('to', 'on', 'Elm Street'),
-    5200: ('to', 'on', 'Maple Street'),
-    5300: ('to', 'on', 'Oak Street'),
-    9000: ('to the', 'in the', 'Playground'),
-    9100: ('to', 'on', 'Lullaby Lane'),
-    9200: ('to', 'on', 'Pajama Place'),
-    10000: ('to', 'in', 'Bossbot HQ Country Club'),
-    10100: ('to the', 'in the', 'Bossbot HQ Lobby'),
-    10200: ('to the', 'in the', 'The Clubhouse'),
+    20000: ('to', 'on', 'Tutorial Terrace'), # The tutorial street, unused for obvious reasons
+    1000: ('to the', 'in the', 'Playground'), # Donalds Dock playground
+    1100: ('to', 'on', 'Barnacle Boulevard'), # Barnacle Boulevard
+    1200: ('to', 'on', 'Seaweed Street'), # Seaweed Street
+    1300: ('to', 'on', 'Lighthouse Lane'), # Lighthouse Lane
+    2000: ('to the', 'in the', 'Playground'), # Toontown Central playground
+    2100: ('to', 'on', 'Silly Street'), # Silly Street
+    2200: ('to', 'on', 'Loopy Lane'), # Loopy Lane
+    2300: ('to', 'on', 'Punchline Place'), # Punchline Place
+    3000: ('to the', 'in the', 'Playground'), # The Brrrgh playground
+    3100: ('to', 'on', 'Walrus Way'), # Walrus Way
+    3200: ('to', 'on', 'Sleet Street'), # Sleet Street
+    3300: ('to', 'on', 'Polar Place'), # Polar Place
+    4000: ('to the', 'in the', 'Playground'), # Minnies Melodyland playground
+    4100: ('to', 'on', 'Alto Avenue'), # Alto Avenue
+    4200: ('to', 'on', 'Baritone Boulevard'), # Baritone Boulevard
+    4300: ('to', 'on', 'Tenor Terrace'), # Tenor Terrace
+    5000: ('to the', 'in the', 'Playground'), # Daisy Gardens playground
+    5100: ('to', 'on', 'Elm Street'), # Elm Street
+    5200: ('to', 'on', 'Maple Street'), # Maple Street
+    5300: ('to', 'on', 'Oak Street'), # Oak Street
+    9000: ('to the', 'in the', 'Playground'), # Donalds Dreamland playground
+    9100: ('to', 'on', 'Lullaby Lane'), # Lullaby Lane
+    9200: ('to', 'on', 'Pajama Place'), # Pajama Place
+    10000: ('to', 'in', 'Bossbot HQ Country Club'), # Bossbot HQ
+    10100: ('to the', 'in the', 'Bossbot HQ Lobby'), # CEO lobby
+    10200: ('to the', 'in the', 'The Clubhouse'), # No idea
     10500: ('to the', 'in the', 'The Front Three'),
     10600: ('to the', 'in the', 'The Middle Six'),
     10700: ('to the', 'in the', 'The Back Nine'),
@@ -105,14 +103,14 @@ TheBrrrgh = ('to', 'in', lTheBrrrgh)
 MinniesMelodyland = ('to', 'in', lMinniesMelodyland)
 DaisyGardens = ('to', 'in', lDaisyGardens)
 OutdoorZone = ('to', 'in', lOutdoorZone)
-FunnyFarm = ('to the', 'in the', 'Funny Farm')
+FunnyFarm = ('to the', 'in the', 'Funny Farm') # Funny Farm, unused by normal means but used for Field Office NPCs
 GoofySpeedway = ('to', 'in', lGoofySpeedway)
 DonaldsDreamland = ('to', 'in', lDonaldsDreamland)
 BossbotHQ = ('to', 'in', 'Bossbot HQ')
 SellbotHQ = ('to', 'in', 'Sellbot HQ')
 CashbotHQ = ('to', 'in', 'Cashbot HQ')
 LawbotHQ = ('to', 'in', 'Lawbot HQ')
-Tutorial = ('to the', 'in the', 'Toon-torial')
+Tutorial = ('to the', 'in the', 'Toon-torial') # The tutorial street, maybe unused?
 MyEstate = ('to', 'in', 'your house')
 WelcomeValley = ('to', 'in', 'Welcome Valley')
 GolfZone = ('to', 'in', lGolfZone)
@@ -123,12 +121,12 @@ SellbotFrontEntrance = 'Front Entrance'
 SellbotSideEntrance = 'Side Entrance'
 Office = 'Office'
 FactoryNames = {
-    0: 'Factory Mockup',
+    0: 'Factory Mockup', # Mockup? Unused, files may exist for it
     11500: 'Sellbot Cog Factory',
     13300: 'Lawbot Cog Office' }
-FactoryTypeLeg = 'Leg'
-FactoryTypeArm = 'Arm'
-FactoryTypeTorso = 'Torso'
+FactoryTypeLeg = 'Leg' # Leg piece
+FactoryTypeArm = 'Arm' # Arm piece
+FactoryTypeTorso = 'Torso' # Torso
 MintFloorTitle = 'Floor %s'
 lCancel = 'Cancel'
 lClose = 'Close'
@@ -3319,9 +3317,9 @@ ToonHealJokes = [
     [
         'Why did ' + MickeyMouse + ' take a trip to outer space?',
         'He wanted to find ' + Pluto + '.']]
-MovieHealLaughterMisses = ('hmm', 'heh', 'ha', 'harr harr')
-MovieHealLaughterHits1 = ('Ha Ha Ha', 'Hee Hee', 'Tee Hee', 'Ha Ha')
-MovieHealLaughterHits2 = ('BWAH HAH HAH!', 'HO HO HO!', 'HA HA HA!')
+MovieHealLaughterMisses = ('hmm', 'heh', 'ha', 'harr harr') # Toon-Up isn't strong
+MovieHealLaughterHits1 = ('Ha Ha Ha', 'Hee Hee', 'Tee Hee', 'Ha Ha') # Toon-Up works
+MovieHealLaughterHits2 = ('BWAH HAH HAH!', 'HO HO HO!', 'HA HA HA!') # Toon-Up works better than expected
 MovieSOSCallHelp = '%s HELP!'
 MovieSOSWhisperHelp = '%s needs help in battle!'
 MovieSOSObserverHelp = 'HELP!'
@@ -3341,7 +3339,7 @@ MovieNPCSOSAll = 'All'
 MoviePetSOSTrickFail = 'Sigh'
 MoviePetSOSTrickSucceedBoy = 'Good boy!'
 MoviePetSOSTrickSucceedGirl = 'Good girl!'
-MovieSuitCancelled = 'CANCELLED\nCANCELLED\nCANCELLED'
+MovieSuitCancelled = 'CANCELLED\nCANCELLED\nCANCELLED' # Unused?
 RewardPanelToonTasks = 'ToonTasks'
 RewardPanelItems = 'Items Recovered'
 RewardPanelMissedItems = 'Items Not Recovered'
@@ -3482,9 +3480,9 @@ SuitSpinDoctorP = 'Spin Doctors'
 SuitLegalEagleP = 'Legal Eagles'
 SuitBigWigP = 'Big Wigs'
 SuitFaceoffDefaultTaunts = [
-    'Boo!']
+    'Boo!'] # Halloween? Probably not used
 SuitAttackDefaultTaunts = [
-    'Take that!',
+    'Take that!', # Is this used?
     'Take a memo on this!']
 SuitAttackNames = {
     'Audit': 'Audit!',
@@ -3495,7 +3493,7 @@ SuitAttackNames = {
     'Calculate': 'Calculate!',
     'Canned': 'Canned!',
     'Chomp': 'Chomp!',
-    'CigarSmoke': 'Cigar Smoke!',
+    'CigarSmoke': 'Cigar Smoke!', # Unused
     'ClipOnTie': 'Clip On Tie!',
     'Crunch': 'Crunch!',
     'Demotion': 'Demotion!',
@@ -3505,10 +3503,10 @@ SuitAttackNames = {
     'EvilEye': 'Evil Eye!',
     'Filibuster': 'Filibuster!',
     'FillWithLead': 'Fill With Lead!',
-    'FiveOClockShadow': "Five O'Clock Shadow!",
+    'FiveOClockShadow': "Five O'Clock Shadow!", # Unused
     'FingerWag': 'Finger Wag!',
     'Fired': 'Fired!',
-    'FloodTheMarket': 'Flood The Market!',
+    'FloodTheMarket': 'Flood The Market!', # Unused
     'FountainPen': 'Fountain Pen!',
     'FreezeAssets': 'Freeze Assets!',
     'Gavel': 'Gavel!',
@@ -3534,7 +3532,7 @@ SuitAttackNames = {
     'Quake': 'Quake!',
     'RazzleDazzle': 'Razzle Dazzle!',
     'RedTape': 'Red Tape!',
-    'ReOrg': 'Re-Org!',
+    'ReOrg': 'Re-Org!', # Unused
     'RestrainingOrder': 'Restraining Order!',
     'Rolodex': 'Rolodex!',
     'RubberStamp': 'Rubber Stamp!',
@@ -3544,7 +3542,7 @@ SuitAttackNames = {
     'Schmooze': 'Schmooze!',
     'Shake': 'Shake!',
     'Shred': 'Shred!',
-    'SongAndDance': 'Song And Dance!',
+    'SongAndDance': 'Song And Dance!', # Unused
     'Spin': 'Spin!',
     'Synergy': 'Synergy!',
     'Tabulate': 'Tabulate!',
@@ -4035,7 +4033,7 @@ SuitAttackTaunts = {
         'Let me keep you busy.',
         'Just try to unravel this.',
         'I want this meeting to stick with you.'],
-    'ReOrg': [
+    'ReOrg': [ # Unused, this is the only removed attack to have had any quotes
         "You don't like the way I reorganized things!",
         'Perhaps a little reorganization is in order.',
         "You're not that bad, you just need to be reorganized.",
@@ -4805,7 +4803,7 @@ VampireMickeyChatter = ([
     "I'm going to sneak up on another Toon!  Shhh!",
     "I'm going trick-or-treating!",
     'Shhh, sneak with me.'])
-FieldOfficeMickeyChatter = [
+FieldOfficeMickeyChatter = [ # Used for the Field Offices, unused in 2010 I believe
     'Have you heard about the new Mover & Shaker Field Offices?']
 MinnieChatter = ([
     'Welcome to Melodyland.',
@@ -4906,7 +4904,7 @@ WitchMinnieChatter = ([
     "I'm going to disappear now!",
     'Time for me to vanish!',
     'Mickey is taking me Trick-or-Treating!'])
-FieldOfficeMinnieChatter = [
+FieldOfficeMinnieChatter = [ # Used for the Field Offices, unused in 2010 I believe
     'Everyone is talking about the new Mover & Shaker Field Offices!']
 DaisyChatter = ([
     'Welcome to my garden!',
@@ -5010,7 +5008,7 @@ HalloweenDaisyChatter = ([
     'I hope you are enjoying our Halloween fun!'], [
     'Donald is taking me Trick-or-Treating!',
     "I'm going to check out the fun Halloween decorations."])
-FieldOfficeDaisyChatter = [
+FieldOfficeDaisyChatter = [ # Used for the Field Offices, unused in 2010 I believe
     'Those Mover & Shaker Field Offices are popping up like weeds!']
 ChipChatter = ([
     'Welcome to %s!' % lOutdoorZone,
@@ -5280,7 +5278,7 @@ ValentinesDreamlandChatter = ([
     'I love sleeping!'], [
     'Nite-nite!',
     "Wake me when it's ValenToon's Day!"])
-FieldOfficeDreamlandChatter = [
+FieldOfficeDreamlandChatter = [ # Used for the Field Offices, unused in 2010 I believe
     'I dreamed about something called a Field Office...']
 HalloweenDonaldChatter = ([
     'Welcome to my Halloween harbor!',
@@ -5587,13 +5585,13 @@ GPGoofySpeedwayChatter = ([
     "I'm going to catch the next race in the Grand Prix!",
     'Gawrsh I think the next race is about to start!',
     'Gosh, I better go check on the new Leaderboard and make sure it is working right!'])
-SillyPhase1Chatter = [
+SillyPhase1Chatter = [ # Silly meter in phase 1
     "If you haven't seen the Silly Meter, head to Toon Hall!",
     'Toontown is getting sillier by the day!',
     "Cause silly surges in battle to boost Toontown's silly levels!",
     'Objects on the street are starting to animate!',
     'I saw a fire hydrant on Silly Street move!']
-SillyPhase2Chatter = [
+SillyPhase2Chatter = [ # Phase 2
     'Silly levels are still rising!',
     'The Silly Meter has climbed higher and gotten crazier!',
     'Someone saw a trash can moving on Maple Street!',
@@ -5601,14 +5599,14 @@ SillyPhase2Chatter = [
     'A mailbox on Lighthouse Lane has gone nuts!',
     'Go see the Silly Meter in Toon Hall!',
     'Keep causing those silly surges!']
-SillyPhase3Chatter = [
+SillyPhase3Chatter = [ # Phase 3
     'The Cogs hated how silly Toontown was becoming!',
     'Keep a sharp eye out for Cog Invasions!',
     'Cog Invasions have caused the silly levels to drop!',
     'The Silly Meter went down after the Cog Invasions!',
     'Every street of Toontown has animated objects now!',
     'Toontown is sillier than ever!']
-SillyPhase4Chatter = [
+SillyPhase4Chatter = [ # Phase 4
     'Fire hydrants make your Squirt Gags squirtier!',
     'Mail Boxes give your Throw Gags a special delivery!',
     'Those crazy Trash Cans can help boost your Toon-up!',
@@ -5624,7 +5622,7 @@ for chatter in [
     chatter[1].extend(SharedChatterComments)
     chatter[2].extend(SharedChatterGoodbyes)
 
-BoringTopic = 'Boring'
+BoringTopic = 'Boring' # Unused?
 EmceeDialoguePhase1Topic = 'EmceeDialoguePhase1'
 EmceeDialoguePhase2Topic = 'EmceeDialoguePhase2'
 EmceeDialoguePhase3Topic = 'EmceeDialoguePhase3'
@@ -5637,7 +5635,7 @@ AprilToonsPhaseTopTopic = 'AprilToonsPhaseTopTopic'
 AprilToonsExtPhaseTopTopic = 'AprilToonsExtPhaseTopTopic'
 AprilToonsPhasePostTopTopic = 'AprilToonsPhasePostTopTopic'
 toontownDialogues = {
-    BoringTopic: {
+    BoringTopic: { # Are these used?
         (1, 2018): [
             'Hello Albert',
             'It looks like the sillyness levels are rising',
@@ -11033,16 +11031,18 @@ HolidayNamesInCalendar = {
     99: ('Jellybean Week', 'Celebrate Jellybean Week with double Jellybean rewards!'),
     101: ("Top Toons New Year's Day Marathon", "Chances to win every hour! See the What's New Blog for details!"),
     105: ('Toons go GREEN!', 'Toons make a green scene at Green Bean Jeans on Oak Street in Daisy Gardens!') }
-UnknownHoliday = 'Unknown Holiday %d'
+UnknownHoliday = 'Unknown Holiday %d' # Unused for obvious reasons
 HolidayFormat = '%b %d '
 TimeZone = 'US/Pacific'
 CogdoMemoGuiTitle = 'Memos:'
 CogdoMemoNames = 'Barrel-Destruction Memos'
 CogdoStomperName = 'Stomp-O-Matic'
-BoardroomGameTitle = 'Boardroom Hijinks'
-BoardroomGameInstructions = 'The COGS are having a meeting to decide what to do with stolen gags. Slide on through and grab as many gag-destruction memos as you can!'
-CogdoCraneGameTitle = 'Vend-A-Stomper'
-CogdoCraneGameInstructions = 'The COGS are using a coin-operated machine to destroy laff barrels. Use the cranes to pick up and throw money bags, in order to prevent barrel destruction!'
+BoardroomGameTitle = 'Boardroom Hijinks' # Bossbot Field Offices
+BoardroomGameInstructions = 'The COGS are having a meeting to decide what to do with stolen gags. Slide on through and grab as many gag-destruction memos as you can!' # Same here
+CogdoCraneGameTitle = 'Vend-A-Stomper' # Cashbot Field Offices
+CogdoCraneGameInstructions = 'The COGS are using a coin-operated machine to destroy laff barrels. Use the cranes to pick up and throw money bags, in order to prevent barrel destruction!' # Same here
+# Because of Disney having all caps for Cog, we can easily isolate a date for the Bossbot/Cashbot Field Offices,
+# which shows the Sellbot Field Offices may have been created either later on into the games life, or the field offices were worked on extremely early.
 CogdoMazeGameTitle = 'Mover & Shaker\nField Office'
 CogdoMazeGameInstructions = 'The big Mover & Shaker Cogs have the code to open the door. Defeat them with your water balloons in order to get it!'
 CogdoMazeIntroMovieDialogue = (("This is the Toon Resistance! The Movers & Shakers\nhave our Jokes, and they've locked the exit!",), ('Grab water balloons at coolers, and throw them at Cogs!\nSmall Cogs drop Jokes, BIG COGS open the exit.',), ('The more Jokes you rescue, the bigger your Toon-Up\nat the end. Good luck!',))
@@ -11057,9 +11057,9 @@ CogdoMazeThrowHint = "Press 'Ctrl' to throw your water balloon"
 CogdoMazeSquashHint = 'Falling objects pop your balloon'
 CogdoMazeBossHint = 'Big Cogs take TWO hits to defeat'
 CogdoMazeMinionHint = 'Smaller Cogs drop jokes'
-CogdoFlyingGameTitle = 'Legal Eagle Offices'
-CogdoFlyingGameInstructions = "Fly through the Legal Eagles' lair. Watch out for obstacles and cogs along the way, and don't forget to refuel your helicopter!"
-CogdoFlyingIntroMovieDialogue = (("You won't ruffle our feathers, Toons! We're destroying barrels of your Laff, and you cannot stop us!", "A flock of Toons! We're crushing barrels of your Laff in our %s, and there's nothing you can do about it!" % CogdoStomperName, "You can't egg us on, Toons! We're powering our offices with your Laff, and you're powerless to stop us!"), ('This is the Toon Resistance! A little bird told me you can use propellers to fly around, grab Barrel Destruction Memos, and keep Laff from being destroyed! Good luck, Toons!', 'Attention Toons! Wing it with a propeller and collect Barrel Destruction Memos to keep our Laff from being stomped! Toon Resistance out!', 'Toon Resistance here! Cause a flap by finding propellers, flying to the Barrel Destruction Memos, and keeping our Laff from being smashed! Have fun!'), ("Squawk! I'm a Silver Sprocket Award winner, I don't need this!", 'Do your best, Toons! You will find us to be quite talon-ted!', "We'll teach you to obey the pecking order, Toons!"))
+CogdoFlyingGameTitle = 'Legal Eagle Offices' # Legal Eagle Field Offices
+CogdoFlyingGameInstructions = "Fly through the Legal Eagles' lair. Watch out for obstacles and cogs along the way, and don't forget to refuel your helicopter!" # Lord Lowden Clear
+CogdoFlyingIntroMovieDialogue = (("You won't ruffle our feathers, Toons! We're destroying barrels of your Laff, and you cannot stop us!", "A flock of Toons! We're crushing barrels of your Laff in our %s, and there's nothing you can do about it!" % CogdoStomperName, "You can't egg us on, Toons! We're powering our offices with your Laff, and you're powerless to stop us!"), ('This is the Toon Resistance! A little bird told me you can use propellers to fly around, grab Barrel Destruction Memos, and keep Laff from being destroyed! Good luck, Toons!', 'Attention Toons! Wing it with a propeller and collect Barrel Destruction Memos to keep our Laff from being stomped! Toon Resistance out!', 'Toon Resistance here! Cause a flap by finding propellers, flying to the Barrel Destruction Memos, and keeping our Laff from being smashed! Have fun!'), ("Squawk! I'm a Silver Sprocket Award winner, I don't need this!", 'Do your best, Toons! You will find us to be quite talon-ted!', "We'll teach you to obey the pecking order, Toons!")) # Legal Eagle
 CogdoFlyingGameWaiting = 'Waiting for other Toons%s'
 CogdoFlyingGameFuelLabel = 'Fuel'
 CogdoFlyingGameLegalEagleTargeting = 'A Legal Eagle has noticed you!'
@@ -11100,4 +11100,4 @@ InteractivePropTrackBonusTerms = {
     4: 'Super Throw!',
     5: 'Super Squirt!',
     6: '' }
-PlayingCardUnknown = 'Card Name is unknown'
+PlayingCardUnknown = 'Card Name is unknown' # Ok seriously what...

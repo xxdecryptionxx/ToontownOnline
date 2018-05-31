@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from otp.otpbase.OTPTimer import OTPTimer
 from pandac.PandaModules import *
 
@@ -12,7 +10,7 @@ class ToontownTimer(OTPTimer):
     
     def getImage(self):
         if ToontownTimer.ClockImage == None:
-            model = loader.loadModel('phase_3.5/models/gui/clock_gui')
+            model = loader.loadModel('phase_3.5/models/gui/clock_gui') # Clock model
             ToontownTimer.ClockImage = model.find('**/alarm_clock')
             model.removeNode()
         

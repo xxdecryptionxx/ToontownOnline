@@ -1,5 +1,5 @@
-# File: t (Python 2.4)
-
+# Just like Bossbot Field Offices, these are unused.
+# These are Cashbot Field Offices, however.
 from direct.gui.DirectGui import *
 from pandac.PandaModules import *
 from direct.interval.IntervalGlobal import *
@@ -18,10 +18,10 @@ import random
 class DistCogdoCrane(DistributedObject.DistributedObject, FSM.FSM):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistCogdoCrane')
     firstMagnetBit = 21
-    craneMinY = 8
-    craneMaxY = 25
-    armMinH = -45
-    armMaxH = 45
+    craneMinY = 8 # Minimum Y coords for the crane
+    craneMaxY = 25 # Maximum Y coords for the crane
+    armMinH = -45 # Minumum H coords for the cranes arm
+    armMaxH = 45 # Maximum H coords for the cranes arm
     shadowOffset = 7
     emptySlideSpeed = 10
     emptyRotateSpeed = 20
@@ -72,9 +72,9 @@ class DistCogdoCrane(DistributedObject.DistributedObject, FSM.FSM):
         self.heldObject = None
         self.craneAdviceLabel = None
         self.magnetAdviceLabel = None
-        self.atLimitSfx = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.mp3')
-        self.magnetOnSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_on.mp3')
-        self.magnetLoopSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_loop.wav')
+        self.atLimitSfx = base.loadSfx('phase_4/audio/sfx/MG_cannon_adjust.mp3') # Crunch-ish sound for moving the cannons/Magnets
+        self.magnetOnSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_on.mp3') # Magnet activation sound
+        self.magnetLoopSfx = base.loadSfx('phase_10/audio/sfx/CBHQ_CFO_magnet_loop.wav') # Magnet activation loop
         self.magnetSoundInterval = Parallel(SoundInterval(self.magnetOnSfx), Sequence(Wait(0.5), Func(base.playSfx, self.magnetLoopSfx, looping = 1)))
         self.craneMoveSfx = base.loadSfx('phase_9/audio/sfx/CHQ_FACT_elevator_up_down.mp3')
         self.fadeTrack = None

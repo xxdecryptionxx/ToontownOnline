@@ -1,5 +1,5 @@
-# File: t (Python 2.4)
-
+# Cashbot Field Office Cog (what?)
+# I have no idea what this is. Seems to be for the Cashbot Field Offices, but when?
 from pandac import PandaModules as PM
 from direct.distributed.ClockDelta import globalClockDelta
 from direct.distributed.DistributedObject import DistributedObject
