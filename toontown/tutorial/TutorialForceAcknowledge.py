@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 from toontown.toontowngui import TTDialog
 from toontown.toonbase import TTLocalizer
@@ -11,7 +9,7 @@ class TutorialForceAcknowledge:
         self.dialog = None
 
     
-    def enter(self):
+    def enter(self): # Enter the tutorial
         base.localAvatar.loop('neutral')
         self.doneStatus = {
             'mode': 'incomplete' }
@@ -19,7 +17,7 @@ class TutorialForceAcknowledge:
         self.dialog = TTDialog.TTDialog(text = msg, command = self.handleOk, style = TTDialog.Acknowledge)
 
     
-    def exit(self):
+    def exit(self): # Exit the tutorial
         if self.dialog:
             self.dialog.cleanup()
             self.dialog = None

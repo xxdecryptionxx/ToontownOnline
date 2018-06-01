@@ -1,4 +1,4 @@
-# File: t (Python 2.4)
+# Again, seen in localizers. No idea what would've required a factory mockup.
 
 from SpecImports import *
 GlobalEntities = {

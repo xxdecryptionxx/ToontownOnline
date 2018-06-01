@@ -1,4 +1,4 @@
-# File: o (Python 2.4)
+# Either unfinished or this is all that's required
 
 from direct.distributed.DistributedObjectGlobal import DistributedObjectGlobal
 from direct.directnotify.DirectNotifyGlobal import directNotify

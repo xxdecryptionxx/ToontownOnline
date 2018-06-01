@@ -1,5 +1,5 @@
-# File: t (Python 2.4)
-
+# This is unique: an implementation of the level editor within the TTO client!
+# It seems to have been used for factories, but it looks very vague.
 from pandac.PandaModules import Point3, Vec3, VBase3
 from direct.tkwidgets.AppShell import *
 from direct.showbase.TkGlobal import *
@@ -22,12 +22,12 @@ import types
 import Pmw
 
 class InGameEditor(AppShell):
-    appname = 'In-Game Editor'
-    frameWidth = 900
-    frameHeight = 475
+    appname = 'In-Game Editor' # Title
+    frameWidth = 900 # Window width
+    frameHeight = 475 # Window height
     usecommandarea = 1
     usestatusarea = 1
-    contactname = 'Darren Ranalli'
+    contactname = 'Darren Ranalli' # According to Moby Games, he worked on games like Disney Infinity. I can't find anything about Toontown sadly.
     contactphone = '(818) 623-3904'
     contactemail = 'darren.ranalli@disney.com'
     WantUndo = False
@@ -76,7 +76,7 @@ class InGameEditor(AppShell):
         bboard.post(DirectSession.DirectSession.DIRECTdisablePost)
 
     
-    def createMenuBar(self):
+    def createMenuBar(self): # A menu bar. It seems to have more options than the original editor.
         menuBar = self.menuBar
         menuBar.addmenuitem('File', 'command', 'Save the level spec on the AI', label = 'Save on AI', command = self.handleRequestSave)
         menuBar.addmenuitem('File', 'command', 'Save the level spec locally', label = 'Save Locally As...', command = self.handleSaveAs)
@@ -86,10 +86,10 @@ class InGameEditor(AppShell):
         menuBar.addmenuitem('File', 'separator')
         menuBar.addmenuitem('File', 'command', 'Import a tree of entities', label = 'Import Entities...', command = self.level.handleImportEntities)
         menuBar.addmenuitem('File', 'separator')
-        if InGameEditor.WantUndo:
-            menuBar.addmenu('Edit', 'Edit Operations')
-            menuBar.addmenuitem('Edit', 'command', 'Undo the last edit', label = 'Undo', command = self.doUndo)
-            menuBar.addmenuitem('Edit', 'command', 'Redo the last undo', label = 'Redo', command = self.doRedo)
+        if InGameEditor.WantUndo: # Do we want Undos and Redos?
+            menuBar.addmenu('Edit', 'Edit Operations') # If so, add a new menu.
+            menuBar.addmenuitem('Edit', 'command', 'Undo the last edit', label = 'Undo', command = self.doUndo) # Undo
+            menuBar.addmenuitem('Edit', 'command', 'Redo the last undo', label = 'Redo', command = self.doRedo) # Redo
         
         menuBar.addmenu('Entity', 'Entity Operations')
         menuBar.addmenuitem('Entity', 'command', 'Duplicate Selected Entity', label = 'Duplicate Selected Entity', command = self.level.duplicateSelectedEntity)
@@ -120,37 +120,37 @@ class InGameEditor(AppShell):
         menuBar.addmenuitem('Entity', 'separator')
         menuBar.addmenuitem('Entity', 'command', 'Go To Selected Entity', label = 'Go To Selected Entity', command = self.level.moveAvToSelected)
         menuBar.addmenuitem('Entity', 'command', 'Refresh Entity Explorer', label = 'Refresh Entity Explorer', command = self.refreshExplorer)
-        self.menuBar.addmenu('DIRECT', 'Direct Session Panel Operations')
+        self.menuBar.addmenu('DIRECT', 'Direct Session Panel Operations') # Direct Panel! May be an early version.
         self.menuBar.addmenuitem('DIRECT', 'checkbutton', 'DIRECT Enabled', label = 'Enable', variable = direct.panel.directEnabled, command = direct.panel.toggleDirect)
         self.menuBar.addmenuitem('DIRECT', 'checkbutton', 'DIRECT Grid Enabled', label = 'Enable Grid', variable = direct.panel.directGridEnabled, command = direct.panel.toggleDirectGrid)
         self.menuBar.addmenuitem('DIRECT', 'command', 'Toggle Object Handles Visability', label = 'Toggle Widget Viz', command = direct.toggleWidgetVis)
         self.menuBar.addmenuitem('DIRECT', 'command', 'Toggle Widget Move/COA Mode', label = 'Toggle Widget Mode', command = direct.manipulationControl.toggleObjectHandlesMode)
         self.menuBar.addmenuitem('DIRECT', 'checkbutton', 'DIRECT Widget On Top', label = 'Widget On Top', variable = direct.panel.directWidgetOnTop, command = direct.panel.toggleWidgetOnTop)
         self.menuBar.addmenuitem('DIRECT', 'command', 'Deselect All', label = 'Deselect All', command = direct.deselectAll)
-        if InGameEditor.WantUndo:
-            undoFrame = Frame(self.menuFrame)
-            self.redoButton = Button(undoFrame, text = 'Redo', command = self.doRedo)
+        if InGameEditor.WantUndo: # Do we want Undos and Redos?
+            undoFrame = Frame(self.menuFrame) # If so, add a new frame.
+            self.redoButton = Button(undoFrame, text = 'Redo', command = self.doRedo) # Redo
             self.redoButton.pack(side = RIGHT, expand = 0)
-            self.undoButton = Button(undoFrame, text = 'Undo', command = self.doUndo)
+            self.undoButton = Button(undoFrame, text = 'Undo', command = self.doUndo) # Undo
             self.undoButton.pack(side = RIGHT, expand = 0)
             undoFrame.pack(side = RIGHT, expand = 0)
         
-        toggleFrame = Frame(self.menuFrame)
-        self.wireframeButton = Button(toggleFrame, text = 'Wire', command = self.doWireframe)
+        toggleFrame = Frame(self.menuFrame) # This seems to toggle some debug options
+        self.wireframeButton = Button(toggleFrame, text = 'Wire', command = self.doWireframe) # Wireframe
         self.wireframeButton.pack(side = RIGHT, expand = 0)
-        self.texButton = Button(toggleFrame, text = 'Tex', command = self.doTex)
+        self.texButton = Button(toggleFrame, text = 'Tex', command = self.doTex) # Textures
         self.texButton.pack(side = RIGHT, expand = 0)
-        self.csButton = Button(toggleFrame, text = 'Cs', command = self.doCs)
+        self.csButton = Button(toggleFrame, text = 'Cs', command = self.doCs) # Unknown
         self.csButton.pack(side = RIGHT, expand = 0)
-        self.runButton = Button(toggleFrame, text = 'Run', command = self.doRun)
+        self.runButton = Button(toggleFrame, text = 'Run', command = self.doRun) # Run the game?
         self.runButton.pack(side = RIGHT, expand = 0)
-        self.oobeButton = Button(toggleFrame, text = 'Oobe', command = self.doOobe)
+        self.oobeButton = Button(toggleFrame, text = 'Oobe', command = self.doOobe) # Oobe (Out Of Body Expereince)
         self.oobeButton.pack(side = RIGHT, expand = 0)
         toggleFrame.pack(side = RIGHT, expand = 0, padx = 5)
         AppShell.createMenuBar(self)
 
     
-    def createInterface(self):
+    def createInterface(self): # Create the interface
         interior = self.interior()
         mainFrame = Frame(interior)
         self.framePane = Pmw.PanedWidget(mainFrame, orient = DGG.HORIZONTAL)
@@ -218,11 +218,11 @@ class InGameEditor(AppShell):
         
 
     
-    def refreshExplorer(self):
-        self.explorer.update()
+    def refreshExplorer(self): # Refresh?
+        self.explorer.update() # Update explorer
 
     
-    def selectEntity(self, entId):
+    def selectEntity(self, entId): # Select an entity
         node = self.explorer._node.find(entId)
         if node:
             node.reveal()
@@ -231,7 +231,7 @@ class InGameEditor(AppShell):
         
 
     
-    def removeSelectedEntity(self):
+    def removeSelectedEntity(self): # Remove selected entity
         if self.level.selectedEntity:
             parentEntId = self.level.selectedEntity.parentEntId
         else:
@@ -244,7 +244,7 @@ class InGameEditor(AppShell):
         
 
     
-    def removeSelectedEntityTree(self):
+    def removeSelectedEntityTree(self): # Same as above, but for trees
         if self.level.selectedEntity:
             parentEntId = self.level.selectedEntity.parentEntId
         else:
@@ -270,7 +270,7 @@ class InGameEditor(AppShell):
         self.cbDict = { }
 
     
-    def updateEntityCopy(self, entId):
+    def updateEntityCopy(self, entId): # Update entities?
         if self.entityCopy == None:
             self.entityCopy = self.level.getEntInstanceNPCopy(entId)
             if self.entityCopy is not None:
@@ -549,7 +549,7 @@ class InGameEditor(AppShell):
         widg.pack(fill = X, expand = 1)
         if attribName in ('pos', 'hpr', 'scale'):
             
-            def placeEntity():
+            def placeEntity(): # Place an entity
                 selectedEntityNP = self.level.getEntInstanceNP(entId)
                 if selectedEntityNP is not None:
                     selectedEntityNP.place()
@@ -629,7 +629,7 @@ a])
             self.handleAttributeChangeSubmit(attribName, text, entId, levelSpec)
 
         
-        def askFilename(callback = handleReturn):
+        def askFilename(callback = handleReturn): # This is interesting! Not only does it provide some info on the directories, it shows this was intended for Toontown!
             if text.get() == 'None':
                 initialDir = Filename.expandFrom('$TTMODELS/built/').toOsSpecific()
             else:
@@ -888,7 +888,7 @@ a])
         pass
 
     
-    def toggleBalloon(self):
+    def toggleBalloon(self): # Balloon help? Didn't work in the normal editor from what I know, so it might not work here.
         if self.toggleBalloonVar.get():
             self.balloon().configure(state = 'both')
         else:
@@ -928,51 +928,51 @@ a])
         
 
     
-    def doUndo(self):
+    def doUndo(self): # Undo
         messenger.send(self.undoEvent)
 
     
-    def doRedo(self):
+    def doRedo(self): # Redo
         messenger.send(self.redoEvent)
 
     
-    def doWireframe(self):
+    def doWireframe(self): # Wireframe
         messenger.send(self.wireframeEvent)
 
     
-    def doOobe(self):
+    def doOobe(self): # Oobe
         messenger.send(self.oobeEvent)
 
     
-    def doCs(self):
+    def doCs(self): # Unknown
         messenger.send(self.csEvent)
 
     
-    def doRun(self):
+    def doRun(self): # Running the game?
         messenger.send(self.runEvent)
 
     
-    def doTex(self):
+    def doTex(self): # Textures
         messenger.send(self.texEvent)
 
     
-    def resetLevel(self):
+    def resetLevel(self): # Reset
         self.showTodo(what = 'resetLevel')
 
     
-    def showTodo(self, what = ''):
+    def showTodo(self, what = ''): # Shows an incomplete TODO list
         self.showWarning('%s\nThis is not yet implemented.' % what, 'TODO')
 
     
-    def showWarning(self, msg, title = 'Warning'):
+    def showWarning(self, msg, title = 'Warning'): # Warning
         showwarning(title, msg, parent = self.parent)
 
     
-    def askYesNo(self, msg, title = 'Query'):
+    def askYesNo(self, msg, title = 'Query'): # Yes or no
         return askyesno(title, msg, parent = self.parent)
 
     
-    def popupLevelDialog(self):
+    def popupLevelDialog(self): # Popup for level data?
         data = askstring('Input Level Data', 'Level Data:', parent = self)
         if data:
             self.messageBar().helpmessage(data)
@@ -980,7 +980,7 @@ a])
 
 
 
-class LevelVisZonesEditor(Pmw.MegaToplevel):
+class LevelVisZonesEditor(Pmw.MegaToplevel): # Vis-Zone editor? Probably an earlier name for Visgroup
     
     def __init__(self, editor, entId, visible, modelZones = [], updateCommand = None, parent = None, **kw):
         DGG.INITOPT = Pmw_INITOPT

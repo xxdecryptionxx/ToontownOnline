@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from toontown.toonbase.ToontownBattleGlobals import *
 from BattleBase import *
 from direct.interval.IntervalGlobal import *
@@ -32,9 +30,9 @@ from toontown.toontowngui import TTDialog
 import copy
 from toontown.toonbase import TTLocalizer
 from toontown.toon import NPCToons
-camPos = Point3(14, 0, 10)
-camHpr = Vec3(89, -30, 0)
-randomBattleTimestamp = base.config.GetBool('random-battle-timestamp', 0)
+camPos = Point3(14, 0, 10) # The cameras position
+camHpr = Vec3(89, -30, 0) # Camera rotation
+randomBattleTimestamp = base.config.GetBool('random-battle-timestamp', 0) # What is this?
 
 class Movie(DirectObject.DirectObject):
     notify = DirectNotifyGlobal.directNotify.newCategory('Movie')

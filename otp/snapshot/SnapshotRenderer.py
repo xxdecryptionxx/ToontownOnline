@@ -1,4 +1,4 @@
-# File: o (Python 2.4)
+# Same as the Dispatcher
 
 from direct.distributed.DistributedObjectGlobal import DistributedObjectGlobal
 from direct.directnotify.DirectNotifyGlobal import directNotify

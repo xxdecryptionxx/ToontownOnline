@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 import DistributedCCharBase
 from direct.directnotify import DirectNotifyGlobal
@@ -53,7 +51,7 @@ class DistributedMinnie(DistributedCCharBase.DistributedCCharBase):
 
 
     
-    def generate(self):
+    def generate(self): # Generation
         DistributedCCharBase.DistributedCCharBase.generate(self, self.diffPath)
         self.neutralDoneEvent = self.taskName('minnie-neutral-done')
         self.neutral = CharStateDatas.CharNeutralState(self.neutralDoneEvent, self)

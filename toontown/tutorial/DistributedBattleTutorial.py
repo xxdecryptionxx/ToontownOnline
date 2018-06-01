@@ -1,12 +1,10 @@
-# File: t (Python 2.4)
-
 from toontown.battle import DistributedBattle
 from direct.directnotify import DirectNotifyGlobal
 
 class DistributedBattleTutorial(DistributedBattle.DistributedBattle):
     notify = DirectNotifyGlobal.directNotify.newCategory('DistributedBattleTutorial')
     
-    def startTimer(self, ts = 0):
+    def startTimer(self, ts = 0): # Was there a timer in the tutorial battle?
         self.townBattle.timer.hide()
 
     

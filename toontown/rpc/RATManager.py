@@ -1,4 +1,4 @@
-# File: t (Python 2.4)
+# What is this?
 
 from direct.distributed.DistributedObjectGlobal import DistributedObjectGlobal
 

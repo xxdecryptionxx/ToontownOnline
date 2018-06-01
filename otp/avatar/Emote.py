@@ -1,5 +1,3 @@
-# File: o (Python 2.4)
-
 from otp.otpbase import OTPLocalizer
 import types
 
