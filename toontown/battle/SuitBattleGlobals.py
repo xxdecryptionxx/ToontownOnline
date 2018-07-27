@@ -1,12 +1,10 @@
-# File: t (Python 2.4)
-
 from BattleBase import *
 import random
 from direct.directnotify import DirectNotifyGlobal
 from otp.otpbase import OTPLocalizer
 from toontown.toonbase import TTLocalizer
 notify = DirectNotifyGlobal.directNotify.newCategory('SuitBattleGlobals')
-debugAttackSequence = { }
+debugAttackSequence = { } # Unused debugging attack sequence?
 
 def pickFromFreqList(freqList):
     randNum = random.randint(0, 99)
@@ -118,7 +116,7 @@ def getSuitAttack(suitName, suitLevel, attackNum = -1):
     return adict
 
 SuitAttributes = {
-    'f': {
+    'f': { # Flunky
         'name': TTLocalizer.SuitFlunky,
         'singularname': TTLocalizer.SuitFlunkyS,
         'pluralname': TTLocalizer.SuitFlunkyP,
@@ -127,8 +125,8 @@ SuitAttributes = {
         'def': (2, 5, 10, 12, 15),
         'freq': (50, 30, 10, 5, 5),
         'acc': (35, 40, 45, 50, 55),
-        'attacks': (('PoundKey', (2, 2, 3, 4, 6), (75, 75, 80, 80, 90), (30, 35, 40, 45, 50)), ('Shred', (3, 4, 5, 6, 7), (50, 55, 60, 65, 70), (10, 15, 20, 25, 30)), ('ClipOnTie', (1, 1, 2, 2, 3), (75, 80, 85, 90, 95), (60, 50, 40, 30, 20))) },
-    'p': {
+        'attacks': (('PoundKey', (2, 2, 3, 4, 6), (75, 75, 80, 80, 90), (30, 35, 40, 45, 50)), ('Shred', (3, 4, 5, 6, 7), (50, 55, 60, 65, 70), (10, 15, 20, 25, 30)), ('ClipOnTie', (1, 1, 2, 2, 3), (75, 80, 85, 90, 95), (60, 50, 40, 30, 20))) }, # In order: Pound Key, Shred, Clip-On Tie
+    'p': { # Pencil Pusher
         'name': TTLocalizer.SuitPencilPusher,
         'singularname': TTLocalizer.SuitPencilPusherS,
         'pluralname': TTLocalizer.SuitPencilPusherP,
@@ -438,9 +436,9 @@ SuitAttributes = {
         'freq': (50, 30, 10, 5, 5),
         'acc': (35, 40, 45, 50, 55),
         'attacks': (('PowerTrip', (10, 11, 13, 15, 16), (75, 80, 85, 90, 95), (50, 50, 50, 50, 50)), ('ThrowBook', (13, 15, 17, 19, 21), (80, 85, 85, 85, 90), (50, 50, 50, 50, 50))) } }
-ATK_TGT_UNKNOWN = 1
-ATK_TGT_SINGLE = 2
-ATK_TGT_GROUP = 3
+ATK_TGT_UNKNOWN = 1 # No idea
+ATK_TGT_SINGLE = 2 # Targets a single Toon
+ATK_TGT_GROUP = 3 # Targets all
 SuitAttacks = {
     'Audit': ('phone', ATK_TGT_SINGLE),
     'Bite': ('throw-paper', ATK_TGT_SINGLE),
@@ -450,7 +448,7 @@ SuitAttacks = {
     'Calculate': ('phone', ATK_TGT_SINGLE),
     'Canned': ('throw-paper', ATK_TGT_SINGLE),
     'Chomp': ('throw-paper', ATK_TGT_SINGLE),
-    'CigarSmoke': ('cigar-smoke', ATK_TGT_SINGLE),
+    'CigarSmoke': ('cigar-smoke', ATK_TGT_SINGLE), # Unused attack Cigar Smoke
     'ClipOnTie': ('throw-paper', ATK_TGT_SINGLE),
     'Crunch': ('throw-object', ATK_TGT_SINGLE),
     'Demotion': ('magic1', ATK_TGT_SINGLE),
@@ -462,8 +460,8 @@ SuitAttacks = {
     'FillWithLead': ('pencil-sharpener', ATK_TGT_SINGLE),
     'FingerWag': ('finger-wag', ATK_TGT_SINGLE),
     'Fired': ('magic2', ATK_TGT_SINGLE),
-    'FiveOClockShadow': ('glower', ATK_TGT_SINGLE),
-    'FloodTheMarket': ('glower', ATK_TGT_SINGLE),
+    'FiveOClockShadow': ('glower', ATK_TGT_SINGLE), # Unused attack Five O' Clock Shadow (Glower is a placeholder?)
+    'FloodTheMarket': ('glower', ATK_TGT_SINGLE), # Unused attack Flood the Market (Glower is a placeholder here too)
     'FountainPen': ('pen-squirt', ATK_TGT_SINGLE),
     'FreezeAssets': ('glower', ATK_TGT_SINGLE),
     'Gavel': ('gavel', ATK_TGT_SINGLE),
@@ -489,7 +487,7 @@ SuitAttacks = {
     'Quake': ('quick-jump', ATK_TGT_GROUP),
     'RazzleDazzle': ('smile', ATK_TGT_SINGLE),
     'RedTape': ('throw-object', ATK_TGT_SINGLE),
-    'ReOrg': ('magic3', ATK_TGT_SINGLE),
+    'ReOrg': ('magic3', ATK_TGT_SINGLE), # Unused attack Re-Organize
     'RestrainingOrder': ('throw-paper', ATK_TGT_SINGLE),
     'Rolodex': ('roll-o-dex', ATK_TGT_SINGLE),
     'RubberStamp': ('rubber-stamp', ATK_TGT_SINGLE),
@@ -499,12 +497,12 @@ SuitAttacks = {
     'Schmooze': ('speak', ATK_TGT_SINGLE),
     'Shake': ('stomp', ATK_TGT_GROUP),
     'Shred': ('shredder', ATK_TGT_SINGLE),
-    'SongAndDance': ('song-and-dance', ATK_TGT_SINGLE),
+    'SongAndDance': ('song-and-dance', ATK_TGT_SINGLE), # Unused attack Song and Dance
     'Spin': ('magic3', ATK_TGT_SINGLE),
     'Synergy': ('magic3', ATK_TGT_GROUP),
     'Tabulate': ('phone', ATK_TGT_SINGLE),
     'TeeOff': ('golf-club-swing', ATK_TGT_SINGLE),
-    'ThrowBook': ('throw-object', ATK_TGT_SINGLE),
+    'ThrowBook': ('throw-object', ATK_TGT_SINGLE), # Unused attack Throw Book (Seems to have almost made it)
     'Tremor': ('stomp', ATK_TGT_GROUP),
     'Watercooler': ('watercooler', ATK_TGT_SINGLE),
     'Withdrawal': ('magic1', ATK_TGT_SINGLE),
@@ -517,7 +515,7 @@ BUZZ_WORD = SuitAttacks.keys().index('BuzzWord')
 CALCULATE = SuitAttacks.keys().index('Calculate')
 CANNED = SuitAttacks.keys().index('Canned')
 CHOMP = SuitAttacks.keys().index('Chomp')
-CIGAR_SMOKE = SuitAttacks.keys().index('CigarSmoke')
+CIGAR_SMOKE = SuitAttacks.keys().index('CigarSmoke') # Unused attack Cigar Smoke
 CLIPON_TIE = SuitAttacks.keys().index('ClipOnTie')
 CRUNCH = SuitAttacks.keys().index('Crunch')
 DEMOTION = SuitAttacks.keys().index('Demotion')
@@ -529,8 +527,8 @@ FILIBUSTER = SuitAttacks.keys().index('Filibuster')
 FILL_WITH_LEAD = SuitAttacks.keys().index('FillWithLead')
 FINGER_WAG = SuitAttacks.keys().index('FingerWag')
 FIRED = SuitAttacks.keys().index('Fired')
-FIVE_O_CLOCK_SHADOW = SuitAttacks.keys().index('FiveOClockShadow')
-FLOOD_THE_MARKET = SuitAttacks.keys().index('FloodTheMarket')
+FIVE_O_CLOCK_SHADOW = SuitAttacks.keys().index('FiveOClockShadow') # Unused attack Five O' Clock Shadow (Glower is a placeholder?)
+FLOOD_THE_MARKET = SuitAttacks.keys().index('FloodTheMarket') # Unused attack Flood the Market (Glower is a placeholder here too)
 FOUNTAIN_PEN = SuitAttacks.keys().index('FountainPen')
 FREEZE_ASSETS = SuitAttacks.keys().index('FreezeAssets')
 GAVEL = SuitAttacks.keys().index('Gavel')
@@ -556,7 +554,7 @@ POWER_TRIP = SuitAttacks.keys().index('PowerTrip')
 QUAKE = SuitAttacks.keys().index('Quake')
 RAZZLE_DAZZLE = SuitAttacks.keys().index('RazzleDazzle')
 RED_TAPE = SuitAttacks.keys().index('RedTape')
-RE_ORG = SuitAttacks.keys().index('ReOrg')
+RE_ORG = SuitAttacks.keys().index('ReOrg') # Unused attack Re-Organize
 RESTRAINING_ORDER = SuitAttacks.keys().index('RestrainingOrder')
 ROLODEX = SuitAttacks.keys().index('Rolodex')
 RUBBER_STAMP = SuitAttacks.keys().index('RubberStamp')
@@ -566,12 +564,12 @@ SANDTRAP = SuitAttacks.keys().index('SandTrap')
 SCHMOOZE = SuitAttacks.keys().index('Schmooze')
 SHAKE = SuitAttacks.keys().index('Shake')
 SHRED = SuitAttacks.keys().index('Shred')
-SONG_AND_DANCE = SuitAttacks.keys().index('SongAndDance')
+SONG_AND_DANCE = SuitAttacks.keys().index('SongAndDance') # Unused attack Song and Dance
 SPIN = SuitAttacks.keys().index('Spin')
 SYNERGY = SuitAttacks.keys().index('Synergy')
 TABULATE = SuitAttacks.keys().index('Tabulate')
 TEE_OFF = SuitAttacks.keys().index('TeeOff')
-THROW_BOOK = SuitAttacks.keys().index('ThrowBook')
+THROW_BOOK = SuitAttacks.keys().index('ThrowBook') # Unused attack Throw Book (Seems to have almost made it)
 TREMOR = SuitAttacks.keys().index('Tremor')
 WATERCOOLER = SuitAttacks.keys().index('Watercooler')
 WITHDRAWAL = SuitAttacks.keys().index('Withdrawal')

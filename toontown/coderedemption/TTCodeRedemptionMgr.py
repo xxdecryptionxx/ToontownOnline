@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from direct.distributed.DistributedObject import DistributedObject
 from direct.directnotify.DirectNotifyGlobal import directNotify
 

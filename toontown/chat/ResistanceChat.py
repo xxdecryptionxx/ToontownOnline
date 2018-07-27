@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from direct.interval.IntervalGlobal import *
 from pandac.PandaModules import *
 from toontown.toonbase import TTLocalizer
@@ -10,9 +8,9 @@ import random
 TTBG = ToontownBattleGlobals
 TTL = TTLocalizer
 EFFECT_RADIUS = 30
-RESISTANCE_TOONUP = 0
+RESISTANCE_TOONUP = 0 # "Toons of the world, Toon Up!"
 RESISTANCE_RESTOCK = 1
-RESISTANCE_MONEY = 2
+RESISTANCE_MONEY = 2 # "Toons of the world, spend wisely!"
 resistanceMenu = [
     RESISTANCE_TOONUP,
     RESISTANCE_RESTOCK,
@@ -149,11 +147,11 @@ def doEffect(textId, speakingToon, nearbyToons):
     (menuIndex, itemIndex) = decodeId(textId)
     itemValue = getItemValue(textId)
     if menuIndex == RESISTANCE_TOONUP:
-        effect = BattleParticles.loadParticleFile('resistanceEffectSparkle.ptf')
+        effect = BattleParticles.loadParticleFile('resistanceEffectSparkle.ptf') # Sparkles
         fadeColor = VBase4(1, 0.5, 1, 1)
     elif menuIndex == RESISTANCE_MONEY:
-        effect = BattleParticles.loadParticleFile('resistanceEffectBean.ptf')
-        bean = loader.loadModel('phase_4/models/props/jellybean4.bam')
+        effect = BattleParticles.loadParticleFile('resistanceEffectBean.ptf') # Jellybeans
+        bean = loader.loadModel('phase_4/models/props/jellybean4.bam') # Jellybean model
         bean = bean.find('**/jellybean')
         colors = {
             'particles-1': (1, 1, 0, 1),

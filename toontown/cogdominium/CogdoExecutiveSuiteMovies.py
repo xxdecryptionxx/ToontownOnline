@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import NodePath, Point3, PlaneNode, TextNode
 from direct.interval.IntervalGlobal import *
 from direct.showbase.ShowBase import Plane
@@ -17,8 +15,8 @@ import CogdoUtil
 
 class CogdoExecutiveSuiteIntro(CogdoGameMovie):
     notify = DirectNotifyGlobal.directNotify.newCategory('CogdoExecutiveSuiteIntro')
-    introDuration = 7
-    cameraMoveDuration = 3
+    introDuration = 7 # How long should this cutscene last?
+    cameraMoveDuration = 3 # How long should the camera movement last?
     
     def __init__(self, shopOwner):
         CogdoGameMovie.__init__(self)
@@ -35,11 +33,11 @@ class CogdoExecutiveSuiteIntro(CogdoGameMovie):
         self.notify.debug('displayLine')
         self._dialogueLabel.node().setText(text)
         self.toonHead.reparentTo(aspect2d)
-        self._toonDialogueSfx.play()
+        self._toonDialogueSfx.play() # Dog noise
         self.toonHead.setClipPlane(self.clipPlane)
 
     
-    def makeSuit(self, suitType):
+    def makeSuit(self, suitType): # Lowden
         self.notify.debug('makeSuit()')
         suit = Suit.Suit()
         dna = SuitDNA.SuitDNA()
@@ -53,13 +51,13 @@ class CogdoExecutiveSuiteIntro(CogdoGameMovie):
         for part in suit.getHeadParts():
             part.hide()
         
-        suit.loop('neutral')
+        suit.loop('neutral') # Standing Loop
 
     
     def load(self):
         self.notify.debug('load()')
         CogdoGameMovie.load(self)
-        backgroundGui = loader.loadModel('phase_5/models/cogdominium/tt_m_gui_csa_flyThru')
+        backgroundGui = loader.loadModel('phase_5/models/cogdominium/tt_m_gui_csa_flyThru') # Dialogue Box
         self.bg = backgroundGui.find('**/background')
         self.chatBubble = backgroundGui.find('**/chatBubble')
         self.chatBubble.setScale(6.5, 6.5, 7.2999999999999998)
@@ -75,7 +73,7 @@ class CogdoExecutiveSuiteIntro(CogdoGameMovie):
         self.frame.hide()
         backgroundGui.removeNode()
         self.toonDNA = ToonDNA.ToonDNA()
-        self.toonDNA.newToonFromProperties('dss', 'ss', 'm', 'm', 2, 0, 2, 2, 1, 8, 1, 8, 1, 14)
+        self.toonDNA.newToonFromProperties('dss', 'ss', 'm', 'm', 2, 0, 2, 2, 1, 8, 1, 8, 1, 14) # Lowdens DNA
         self.toonHead = Toon.Toon()
         self.toonHead.setDNA(self.toonDNA)
         self.makeSuit('sc')
@@ -88,7 +86,7 @@ class CogdoExecutiveSuiteIntro(CogdoGameMovie):
         self.clipPlane = self.toonHead.attachNewNode(PlaneNode('clip'))
         self.clipPlane.node().setPlane(Plane(0, 0, 1, 0))
         self.clipPlane.setPos(0, 0, 2.4500000000000002)
-        self._toonDialogueSfx = loader.loadSfx('phase_3.5/audio/dial/AV_dog_long.mp3')
+        self._toonDialogueSfx = loader.loadSfx('phase_3.5/audio/dial/AV_dog_long.mp3') # Dog speech
         self._camHelperNode = NodePath('CamHelperNode')
         self._camHelperNode.reparentTo(render)
         dialogue = TTLocalizer.CogdoExecutiveSuiteIntroMessage

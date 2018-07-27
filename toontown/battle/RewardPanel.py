@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 from direct.gui.DirectGui import *
 from pandac.PandaModules import *
@@ -23,7 +21,7 @@ from otp.otpbase import OTPGlobals
 
 class RewardPanel(DirectFrame):
     notify = DirectNotifyGlobal.directNotify.newCategory('RewardPanel')
-    SkipBattleMovieEvent = 'skip-battle-movie-event'
+    SkipBattleMovieEvent = 'skip-battle-movie-event' # This doesn't seem to be used. Originally for the skip movie function but was taken out?
     
     def __init__(self, name):
         gscale = (TTLocalizer.RPdirectFrame[0], TTLocalizer.RPdirectFrame[1], TTLocalizer.RPdirectFrame[2] * 1.1000000000000001)
@@ -287,16 +285,16 @@ class RewardPanel(DirectFrame):
         self.meritBars[dept]['barColor'] = (DisguisePage.DeptColors[dept][0] * 0.80000000000000004, DisguisePage.DeptColors[dept][1] * 0.80000000000000004, DisguisePage.DeptColors[dept][2] * 0.80000000000000004, 1)
 
     
-    def getRandomCongratsPair(self, toon):
-        congratsStrings = TTLocalizer.RewardPanelCongratsStrings
+    def getRandomCongratsPair(self, toon): # The words that pop up after you get a new Gag (the "Wow!" and "Toontastic!" stuff)
+        congratsStrings = TTLocalizer.RewardPanelCongratsStrings # Loads strings
         numStrings = len(congratsStrings)
         indexList = range(numStrings)
         index1 = random.choice(indexList)
         indexList.remove(index1)
         index2 = random.choice(indexList)
-        string1 = congratsStrings[index1]
-        string2 = congratsStrings[index2]
-        return (string1, string2)
+        string1 = congratsStrings[index1] # Chooses a random congrats message to display for string 1
+        string2 = congratsStrings[index2] # Same here, but for string 2
+        return (string1, string2) # Displays?
 
     
     def uberGagInterval(self, toon, track, level):
@@ -405,8 +403,8 @@ class RewardPanel(DirectFrame):
         
         self.endTrackFrame.show()
         self.endTrackFrame['text'] = TTLocalizer.RewardPanelEndTrack % {
-            'gagName': ToontownBattleGlobals.Tracks[track].capitalize(),
-            'avName': toon.getName() }
+            'gagName': ToontownBattleGlobals.Tracks[track].capitalize(), # Gag name
+            'avName': toon.getName() } # Toon name
         gagLast = base.localAvatar.inventory.buttonLookup(track, ToontownBattleGlobals.UBER_GAG_LEVEL_INDEX)
         self.gagIcon = gagLast.copyTo(self.endTrackFrame)
         self.gagIcon.setPos(0, 0, -0.25)
@@ -418,7 +416,7 @@ class RewardPanel(DirectFrame):
         self.gagIcon = None
 
     
-    def cleanupEndTrack(self):
+    def cleanupEndTrack(self): # Cleans up endTrack (obviously)
         self.endTrackFrame.hide()
         self.gagExpFrame.show()
         self.newGagFrame.hide()
@@ -550,15 +548,15 @@ class RewardPanel(DirectFrame):
         self.missedItemFrame.hide()
         name = SuitDNA.suitDepts[dept]
         self.promotionFrame['text'] = TTLocalizer.RewardPanelPromotion % SuitDNA.suitDeptFullnames[name]
-        icons = loader.loadModel('phase_3/models/gui/cog_icons')
+        icons = loader.loadModel('phase_3/models/gui/cog_icons') # Cog icon model
         if dept == 0:
-            self.deptIcon = icons.find('**/CorpIcon').copyTo(self.promotionFrame)
+            self.deptIcon = icons.find('**/CorpIcon').copyTo(self.promotionFrame) # Bossbot icon
         elif dept == 1:
-            self.deptIcon = icons.find('**/LegalIcon').copyTo(self.promotionFrame)
+            self.deptIcon = icons.find('**/LegalIcon').copyTo(self.promotionFrame) # Lawbot icon
         elif dept == 2:
-            self.deptIcon = icons.find('**/MoneyIcon').copyTo(self.promotionFrame)
+            self.deptIcon = icons.find('**/MoneyIcon').copyTo(self.promotionFrame) # Cashbot icon
         elif dept == 3:
-            self.deptIcon = icons.find('**/SalesIcon').copyTo(self.promotionFrame)
+            self.deptIcon = icons.find('**/SalesIcon').copyTo(self.promotionFrame) # Sellbot icon
         
         icons.removeNode()
         self.deptIcon.setPos(0, 0, -0.22500000000000001)

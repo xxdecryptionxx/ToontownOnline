@@ -1,5 +1,5 @@
-# File: t (Python 2.4)
-
+# Cashbot Field Offices
+# Basically the most interesting part as it contains most of the info
 from pandac import PandaModules as PM
 from direct.directnotify.DirectNotifyGlobal import directNotify
 from direct.task.Task import Task
@@ -21,19 +21,19 @@ class DistCogdoCraneGame(CogdoCraneGameBase, DistCogdoLevelGame):
         self.moneyBags = { }
 
     
-    def getTitle(self):
+    def getTitle(self): # "Vend-A-Stomper"
         return TTL.CogdoCraneGameTitle
 
     
-    def getInstructions(self):
+    def getInstructions(self): # Instructions, basically just the CFO cranes
         return TTL.CogdoCraneGameInstructions
 
     
     def announceGenerate(self):
         DistCogdoLevelGame.announceGenerate(self)
-        self.timer = ToontownTimer.ToontownTimer()
+        self.timer = ToontownTimer.ToontownTimer() # Like in the Bossbot Field Offices, you would've been timed
         self.timer.stash()
-        if __dev__:
+        if __dev__: # What is this?
             self._durationChangedEvent = self.uniqueName('durationChanged')
         
 
@@ -46,13 +46,13 @@ class DistCogdoCraneGame(CogdoCraneGameBase, DistCogdoLevelGame):
     
     def enterLoaded(self):
         DistCogdoLevelGame.enterLoaded(self)
-        self.lightning = loader.loadModel('phase_10/models/cogHQ/CBLightning.bam')
-        self.magnet = loader.loadModel('phase_10/models/cogHQ/CBMagnet.bam')
-        self.craneArm = loader.loadModel('phase_10/models/cogHQ/CBCraneArm.bam')
-        self.controls = loader.loadModel('phase_10/models/cogHQ/CBCraneControls.bam')
-        self.stick = loader.loadModel('phase_10/models/cogHQ/CBCraneStick.bam')
+        self.lightning = loader.loadModel('phase_10/models/cogHQ/CBLightning.bam') # Magnet lightning
+        self.magnet = loader.loadModel('phase_10/models/cogHQ/CBMagnet.bam') # Magnet
+        self.craneArm = loader.loadModel('phase_10/models/cogHQ/CBCraneArm.bam') # Crane arm
+        self.controls = loader.loadModel('phase_10/models/cogHQ/CBCraneControls.bam') # The box thing with the joystick
+        self.stick = loader.loadModel('phase_10/models/cogHQ/CBCraneStick.bam') # Joystick
         self.cableTex = self.craneArm.findTexture('MagnetControl')
-        self.moneyBag = loader.loadModel('phase_10/models/cashbotHQ/MoneyBag')
+        self.moneyBag = loader.loadModel('phase_10/models/cashbotHQ/MoneyBag') # Money bag
         self.geomRoot = PM.NodePath('geom')
         self.sceneRoot = self.geomRoot.attachNewNode('sceneRoot')
         self.sceneRoot.setPos(35.840000000000003, -115.45999999999999, 6.46)
@@ -172,14 +172,14 @@ class DistCogdoCraneGame(CogdoCraneGameBase, DistCogdoLevelGame):
         self._physicsTask = taskMgr.add(self._doPhysics, self.uniqueName('physics'), priority = 25)
         self.evWalls.stash()
         self._startTimer()
-        if __dev__:
+        if __dev__: # Again, what is this?
             self.accept(self._durationChangedEvent, self._startTimer)
         
 
     
-    def _startTimer(self):
+    def _startTimer(self): # Start the timer
         timeLeft = GameConsts.Settings.GameDuration.get() - self.getCurrentGameTime()
-        self.timer.posInTopRightCorner()
+        self.timer.posInTopRightCorner() # Put it in the top right of the screen
         self.timer.setTime(timeLeft)
         self.timer.countdown(timeLeft, self.timerExpired)
         self.timer.unstash()
@@ -192,7 +192,7 @@ class DistCogdoCraneGame(CogdoCraneGameBase, DistCogdoLevelGame):
 
     
     def exitGame(self):
-        if __dev__:
+        if __dev__: # Seems like the devs had some developer checks, but for what?
             self.ignore(self._durationChangedEvent)
         
         DistCogdoLevelGame.exitGame(self)
@@ -207,16 +207,16 @@ class DistCogdoCraneGame(CogdoCraneGameBase, DistCogdoLevelGame):
         self.timer.unstash()
 
     
-    def timerExpired(self):
+    def timerExpired(self): # Never completed
         pass
 
     if __dev__:
         
-        def _handleGameDurationChanged(self, gameDuration):
-            messenger.send(self._durationChangedEvent)
+        def _handleGameDurationChanged(self, gameDuration): # Do we need to handle a game duration change?
+            messenger.send(self._durationChangedEvent) # If so, send a message to change the duration accordingly
 
         
-        def _handleGravityChanged(self, gravity):
+        def _handleGravityChanged(self, gravity): # Has the gravity changed?
             self.physicsMgr.removeLinearForce(self._gravityForce)
             self._gravityForceNode.removeForce(self._gravityForce)
             self._gravityForce = PM.LinearVectorForce(0, 0, gravity)

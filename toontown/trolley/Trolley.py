@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 from toontown.toonbase.ToonBaseGlobal import *
 from direct.gui.DirectGui import *

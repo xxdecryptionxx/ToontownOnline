@@ -1,4 +1,4 @@
-# File: t (Python 2.4)
+# In Game Editor elements
 
 from direct.showbase import DirectObject
 

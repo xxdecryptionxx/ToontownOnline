@@ -1,4 +1,4 @@
-# File: o (Python 2.4)
+# Leftover from Pirates Online (Which is odd)
 
 from direct.distributed.DistributedObjectGlobal import DistributedObjectGlobal
 from direct.directnotify.DirectNotifyGlobal import directNotify

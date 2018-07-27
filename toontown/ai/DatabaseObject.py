@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from pandac.PandaModules import *
 from ToontownAIMsgTypes import *
 from direct.directnotify.DirectNotifyGlobal import *
@@ -20,14 +18,14 @@ class DatabaseObject:
         self.doneEvent = doneEvent
 
     
-    def readToon(self, fields = None):
+    def readToon(self, fields = None): # Reads the Toon
         toon = DistributedToonAI.DistributedToonAI(self.air)
         self.readObject(toon, fields)
         return toon
 
     if simbase.wantPets:
         
-        def readPet(self):
+        def readPet(self): # Reads the Doodles
             DistributedPetAI = DistributedPetAI
             import toontown.pets
             pet = DistributedPetAI.DistributedPetAI(self.air)
@@ -35,7 +33,7 @@ class DatabaseObject:
             return pet
 
         
-        def readPetProxy(self):
+        def readPetProxy(self): # Proxy for Doodles?
             DistributedPetProxyAI = DistributedPetProxyAI
             import toontown.pets
             petProxy = DistributedPetProxyAI.DistributedPetProxyAI(self.air)

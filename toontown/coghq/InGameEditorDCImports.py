@@ -1,4 +1,4 @@
-# File: t (Python 2.4)
+# In Game Editor DC importing function?
 
 if __dev__:
     from direct.directutil import DistributedLargeBlobSender

@@ -1,4 +1,4 @@
-# File: t (Python 2.4)
+# Factory Mockup? Interestingly, this is in the Localizers
 
 from SpecImports import *
 BattleCells = { }

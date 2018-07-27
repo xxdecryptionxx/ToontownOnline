@@ -1,5 +1,3 @@
-# File: t (Python 2.4)
-
 from direct.interval.IntervalGlobal import *
 from BattleBase import *
 from BattleProps import *
@@ -22,7 +20,7 @@ def makePanel(toon, showToonName):
     panel.initialiseoptions(RewardPanel)
     panel.setTransparency(1)
     panel.hide()
-    if showToonName is 1:
+    if showToonName is 1: # Checks for showing a Toon name?
         panel.avNameLabel = DirectLabel(parent = panel, relief = None, pos = Vec3(0, 0, 0.29999999999999999), text = toon.getName(), text_scale = 0.080000000000000002)
     
     return panel
@@ -137,9 +135,9 @@ def doFanfare(delay, toon, panel):
     red_p0.renderer.getColorInterpolationManager().addConstant(0.0, 1.0, Vec4(1.0, 0.0, 0.0, 1.0), 1)
     trumpetsAppear = LerpColorInterval(trumpetNode, 0.29999999999999999, startColor = Vec4(1, 1, 0, 0), color = Vec4(1, 1, 0, 1))
     trumpetsVanish = LerpColorInterval(trumpetNode, 0.29999999999999999, startColor = Vec4(1, 1, 0, 1), color = Vec4(1, 1, 0, 0))
-    crabHorn = globalBattleSoundCache.getSound('King_Crab.mp3')
-    drumroll = globalBattleSoundCache.getSound('SZ_MM_drumroll.mp3')
-    fanfare = globalBattleSoundCache.getSound('SZ_MM_fanfare.mp3')
+    crabHorn = globalBattleSoundCache.getSound('King_Crab.mp3') # King Crab trumpet noise
+    drumroll = globalBattleSoundCache.getSound('SZ_MM_drumroll.mp3') # Drumroll
+    fanfare = globalBattleSoundCache.getSound('SZ_MM_fanfare.mp3') # Fanfare (Also used for the Star Fish?)
     crabHorn.setTime(1.5)
     partyBall.setTransparency(1)
     partyBall.setColorScale(1, 1, 1, 1)
